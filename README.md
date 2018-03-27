@@ -10,20 +10,20 @@ Step 1. Add the JitPack repository to your build file
 # gradle
 Add it in your root build.gradle at the end of repositories:
 
-allprojects {
+<code>allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }			
 		}
-	}
+	}</code>
 	
 
   
   Step 2. Add the dependency
   
-  dependencies {
+  <code>dependencies {
 	        compile 'com.github.Sridhar-Studio:BarLib-Android:0.1.0'
-	}
+	}</code>
   
   Note: For other builds like maven,.. click this icon [![](https://jitpack.io/v/Sridhar-Studio/BarLib-Android.svg)](https://jitpack.io/#Sridhar-Studio/BarLib-Android)
   
