@@ -26,6 +26,7 @@ public class BarAnimate extends LinearLayout {
     Button button;
     BarView barView;
     EditText edtBarCount;
+    HorizontalScrollView scrollView;
 
 
     public BarAnimate(Context context) {
@@ -58,7 +59,20 @@ public class BarAnimate extends LinearLayout {
                     Toast.makeText(mContext, "Give some bar count", Toast.LENGTH_SHORT).show();
             }
         });
-        randomSet(5,barView);
+        randomSet(15,barView);
+        
+        scrollView.setOnScrollChangeListener(new OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                edtText = edtBarCount.getText().toString();
+                if(edtText.length() > 0){
+                    randomSet(Integer.parseInt(edtText),barView);
+                } else {
+                    randomSet(15, barView);
+                }
+
+            }
+        });
     }
 
     private void randomSet(int random, BarView barView) {
